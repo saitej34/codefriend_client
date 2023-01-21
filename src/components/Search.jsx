@@ -6,7 +6,7 @@ import './Comp.css'
 const Search = () => {
     const [query,setquery] = useState('');
     const [dat,setdata] = useState([]);
-    const url = "http://localhost:5000/searchblog/"+query;
+    const url = "https://cserver-production.up.railway.app/searchblog/"+query;
     const subs = ()=>{
       axios.get(url).then((response)=>{
         console.log(response)

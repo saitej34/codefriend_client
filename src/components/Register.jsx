@@ -23,7 +23,7 @@ const Register = () => {
         }).catch((err)=>{
             console.log(err);
         })*/
-        axios.post('http://localhost:5000/register', {
+        axios.post('https://cserver-production.up.railway.app/register', {
               email:email,
               name:name,
               password:password,

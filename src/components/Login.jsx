@@ -11,7 +11,7 @@ const Login = () => {
     const [password,setpass] = useState('');
     const sub = async(e)=>{
         e.preventDefault();
-        await axios.post("http://localhost:5000/login",{
+        await axios.post("https://cserver-production.up.railway.app/login",{
             email:id,
             password:password
         }).then((response)=>{

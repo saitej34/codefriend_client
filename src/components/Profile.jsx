@@ -13,7 +13,7 @@ const Profile = () => {
     const [linkedi,setlinkde] = useState('');
     const [ppic,setppic] = useState('');
     const {id} = useParams();
-    const url = "http://localhost:5000/profile/"+id;
+    const url = "https://cserver-production.up.railway.app/profile/"+id;
     useEffect(()=>{
         axios.get(url).then((res)=>{
             console.log(res)

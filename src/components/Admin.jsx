@@ -6,7 +6,7 @@ const Admin = () => {
     const [id,setid] = useState('');
     const [pass,setpass] = useState('');
     const sub = (e)=>{
-        axios.post('http://localhost:5000/adminlogin',{
+        axios.post('https://cserver-production.up.railway.app/adminlogin',{
             email:id,
             password:pass
         }).then((response)=>{

@@ -77,7 +77,7 @@ const DashBoard = () => {
       navigate('/')
   }
   const subdetails = (e)=>{
-       axios.put('http://localhost:5000/editprofile',{
+       axios.put('https://cserver-production.up.railway.app/editprofile',{
             name:user,
             email:email,
             profilepic:profile,
@@ -98,7 +98,7 @@ const DashBoard = () => {
           navigate('/login')
     }
     const token = localStorage.getItem('token')
-    const url = "http://localhost:5000/decode/"+token;
+    const url = "https://cserver-production.up.railway.app/decode/"+token;
     axios.get(url).then((response)=>{
           console.log(response.data.name);
           setemail(response.data.email);
@@ -107,7 +107,7 @@ const DashBoard = () => {
     }).catch((error)=>{
       console.log(error);
     })
-    const ur = "http://localhost:5000/getp/"+token;
+    const ur = "https://cserver-production.up.railway.app/getp/"+token;
     axios.get(ur).then((response)=>{
       console.log(response)
       console.log(response.data[0].btitle)

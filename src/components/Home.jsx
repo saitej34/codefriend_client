@@ -8,13 +8,13 @@ const Home = () => {
   const [nb,setnb] = useState('');
   const [arr,setarr] = useState([]);
   useEffect(()=>{
-    const ur = "http://localhost:5000/getblogs"
+    const ur = "https://cserver-production.up.railway.app/getblogs"
     axios.get(ur).then((response)=>{
       setarr(response.data);
     }).catch((error)=>{
       console.log(error);
     })
-    axios.get('http://localhost:5000/getpubl').then((response)=>{
+    axios.get('https://cserver-production.up.railway.app/getpubl').then((response)=>{
         setuser(response.data.users);
         setnb(response.data.blogs);
     }).catch((error)=>{

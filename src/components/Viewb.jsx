@@ -30,14 +30,14 @@ const Viewb = () => {
     {
           navigate('/login')
     }
-    const url = "http://localhost:5000/decode/"+localStorage.getItem('token');
+    const url = "https://cserver-production.up.railway.app/decode/"+localStorage.getItem('token');
     axios.get(url).then((res)=>{
       console.log(res.data.name)
       setuser(res.data.name)
     }).catch((err)=>{
       console.log(err);
     })
-    axios.get('http://localhost:5000/getqy/'+id).then((response) => {
+    axios.get('https://cserver-production.up.railway.app/getqy/'+id).then((response) => {
       console.log(response)
       sett(response.data.btitle);
       setauth(response.data.userid);

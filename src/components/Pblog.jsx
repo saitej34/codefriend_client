@@ -17,7 +17,7 @@ const Pblog = () => {
     const [ei,setei] = useState('');
     const [es,setes] = useState('');
     const subs = async(e)=>{
-        await axios.post('http://localhost:5000/posts',{
+        await axios.post('https://cserver-production.up.railway.app/posts',{
             btitle:ti,
             keywords:kt,
             his:content,
