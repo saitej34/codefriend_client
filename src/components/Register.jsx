@@ -2,6 +2,7 @@ import React,{useState} from 'react'
 import axios from "axios";
 import swal from 'sweetalert'
 import {useNavigate} from 'react-router-dom'
+import CircularProgress from '@mui/material/CircularProgress';
 const Register = () => {
     const hist = useNavigate();
     const [email,setemail] = useState('');
