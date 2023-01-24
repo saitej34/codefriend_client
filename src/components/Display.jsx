@@ -14,35 +14,22 @@ const Display = ({data}) => {
     <div class="container pt-4">
         <h3 class="text-center">Recent Blogs on Road</h3>
         <br/>
-        <div class="row justify-content-center">
+        <div class="row d-flex justify-content-around">
             {data.slice(0,x).map((item) => (
-              <div class="col-md-4 border border-dark m-3 shadow-sm p-3 mb-5 bg-white rounded card">
-                    <div class="card">
-                      <div class="card-header">
-                        <img src={item.imglinke} alt="" />
-                      </div>
-                      <div class="card-body">
-                        <span class="tag tag-teal">{item.keywords}</span>
-                        <h4>{item.btitle}</h4>
-                        <br/>
-                        <Link to={'/viewblog/' + item._id}><span class="btn btn-warning">Read more</span></Link>
-                        <div class="user">
-                        <Avatar
-                            alt="https://www.shutterstock.com/image-vector/profile-placeholder-image-gray-silhouette-no-1153673752"
-                            src={item.profilepic}
-                            sx={{ width: 40, height: 30 }}
-                        />
-                          <div class="user-info">
-                            <h5>{data.userid}</h5>
-                            <small></small>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
+              <div class="col-md-3 column pb-3 m-2">
+              <div class="boxkey mt-3 ml-5">
+                   {item.keywords}
               </div>
+              <br/>
+              <div class="head pt-3">
+                   <p class="hea">{item.btitle}</p>
+              </div>
+              <br/>
+              <Link to={'/viewblog/' + item._id}><span class="btn btn-outline-warning btx">Read more</span></Link>
+          </div>
               ))}
         </div>
-        <center><a class="btn btn-warning" onClick={views} >View More</a></center>
+        <center><a class="btn btn-warning mt-5" onClick={views} >View More</a></center>
     </div>
   )
 }
