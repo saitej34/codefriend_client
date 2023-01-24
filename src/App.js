@@ -12,6 +12,7 @@ import Viewb from './components/Viewb'
 import Search from './components/Search'
 import AdminDashboard from './components/AdminDashboard'
 import Profile from './components/Profile'
+import Topuser from './components/Topuser'
 import {BrowserRouter,Routes,Route} from 'react-router-dom';
 const App = () => {
   return (
@@ -31,6 +32,7 @@ const App = () => {
           <Route exact path="/viewblog/:id" element={<Viewb />} />
           <Route exact path="/search" element={<Search />} />
           <Route exact path="/profile/:id" element={<Profile />} />
+          <Route exact path="/topusers" element={<Topuser />} />
         </Routes>
     </div>
     </BrowserRouter>

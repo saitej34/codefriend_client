@@ -3,10 +3,12 @@ import './Comp.css'
 import axios from 'axios'
 import Display from './Display'
 import Countup from 'react-countup'
+import Technews from './Technews';
 const Home = () => {
   const [user,setuser] = useState('');
   const [nb,setnb] = useState('');
   const [arr,setarr] = useState([]);
+  const data = new Array();
   useEffect(()=>{
     const ur = "https://cserver-production.up.railway.app/getblogs"
     axios.get(ur).then((response)=>{
@@ -20,6 +22,17 @@ const Home = () => {
     }).catch((error)=>{
           console.log(error);
     })
+    fetch('https://newsdata.io/api/1/news?apikey=pub_15942875165247b48c901e0245bf900f9b7e0&q=software&country=in&language=en&category=technology').then(res=>res.json()).then((res)=>{
+            if(data.length<res.results.length){
+                for(var i=0;i<res.results.length;i++)
+                {
+                    data.push(res.results[i]);
+                }
+            }
+            console.log(data)
+        }).catch((err)=>{
+            console.error(err)
+        })
   },[])
   return (
     <div>
@@ -99,6 +112,7 @@ const Home = () => {
   </div>
   <br/>
   <Display data={arr} />
+  <Technews items={data}/>
   <br/> <br/><br/>
   <h3 class="text-center">Contact us</h3>
     <br/>
@@ -151,8 +165,8 @@ const Home = () => {
       <div class="container">
         <div class="row">
           <div class="col-md-8 col-sm-6 col-xs-12">
-            <p class="copyright-text">Copyright &copy; 2022 All Rights Reserved by 
-         <a href="https://saitej34.github.io/saiportfolio.github.io/">Y.SAI TEJA</a>.
+            <p class="copyright-text">Copyright &copy; 2022 All Rights Reserved by  
+         <a href="https://saitej34.github.io/saiportfolio.github.io/"> Y.SAI TEJA</a>.
             </p>
           </div>
         </div>
