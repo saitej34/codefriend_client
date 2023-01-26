@@ -1,5 +1,7 @@
 import axios from 'axios';
 import './Load.css'
+import Displaye from './Displaye'
+import Displayp from './Displayp'
 import React,{useState} from 'react'
 import {useNavigate} from 'react-router-dom'
 const Login = () => {
@@ -22,10 +24,12 @@ const Login = () => {
             console.log(response.data)
             if(response.data.message === "User Not Found"){
                  setresult("User not found");
+                 setloading(false);
             }
             else if(response.data.message === "Incorrect Password")
             {
                 setresult("Password is Incorrect");
+                setloading(false);
             }
             if(response.data.token.length>0)
             {
@@ -51,7 +55,7 @@ const Login = () => {
             <br/>
             <div class="row justify-content-center">
                 <div class="col-md-9">
-                    <input type="Password" class="form-control ml-4 text-center" placeholder="Password" onChange={(e)=>{setpass(e.target.value)}}/>
+                    <input type="password" class="form-control ml-4 text-center" placeholder="Password" onChange={(e)=>{setpass(e.target.value)}}/>
                 </div>
             </div>
             <br/>
@@ -75,8 +79,9 @@ const Login = () => {
                 </div>
             </div>
             <br/>
-            <p class="text text-white">{result}</p>
             <br/>
+            {result=="User not found" ? <Displaye /> : null}
+            {result=="Password is Incorrect" ? <Displayp /> : null}
          </div>
          <center>
          

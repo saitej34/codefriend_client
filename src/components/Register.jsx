@@ -60,22 +60,22 @@ const Register = () => {
             <br/><br/>
             <div class="row justify-content-center">
                 <div class="col-md-9">
-                    <input type="text" class="form-control ml-4 text-center" placeholder="Email Id" onChange={(e)=>{setemail(e.target.value)}}/>
+                    <input type="text" class="form-control ml-4 text-center" placeholder="Email Id" onChange={(e)=>{setemail(e.target.value)}} required/>
                 </div>
             </div><br/><br/>
             <div class="row justify-content-center">
                 <div class="col-md-9">
-                    <input type="text" class="form-control ml-4 text-center" placeholder="Name" onChange={(e)=>{setname(e.target.value)}}/>
+                    <input type="text" class="form-control ml-4 text-center" placeholder="Name" onChange={(e)=>{setname(e.target.value)}} required/>
                 </div>
             </div><br/><br/>
             <div class="row justify-content-center">
                 <div class="col-md-9">
-                    <input type="password" class="form-control ml-4 text-center" placeholder="Password" onChange={(e)=>{setpass(e.target.value)}}/>
+                    <input type="password" class="form-control ml-4 text-center" placeholder="Password" onChange={(e)=>{setpass(e.target.value)}} required/>
                 </div>
             </div><br/><br/>
             <div class="row justify-content-center">
                 <div class="col-md-9">
-                    <input type="password" class="form-control ml-4 text-center" placeholder="Confirm Password" onChange={(e)=>{setcpass(e.target.value)}}/>
+                    <input type="password" class="form-control ml-4 text-center" placeholder="Confirm Password" onChange={(e)=>{setcpass(e.target.value)}} required/>
                 </div>
             </div><br/><br/>
             <div class="row justify-content-center">
