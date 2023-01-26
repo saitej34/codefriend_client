@@ -34,7 +34,6 @@ const DashBoard = () => {
   const settings = ['Profile','Account','Make Friends','Logout'];
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
-
   const handleOpenUserMenu = (event) => {
     setAnchorElUser(event.currentTarget);
   };

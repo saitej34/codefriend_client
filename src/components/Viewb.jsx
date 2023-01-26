@@ -1,16 +1,22 @@
 import axios from 'axios';
 import React,{useState,useEffect} from 'react';
 import {Link} from 'react-router-dom';
+import Displayc from './Displayc';
 import Avatar from '@mui/material/Avatar';
 import { useNavigate } from 'react-router-dom';
 import { useParams } from 'react-router-dom'
 import './Comp.css'
+import './Load.css'
 const Viewb = () => {
   const navigate = useNavigate();
   function Set() {
     return { __html: bod };
   }
+  const [loading,setloading] = useState(false);
+  const [com,setcom] = useState('');
+  const [comments,setcomments] = useState([]);
   const [comm,setcomm] = useState('');
+  const [bid,setbid] = useState('');
   const [user,setuser] = useState('');
   const [auth,setauth] = useState('');
   const [datetime,setdt] = useState('');
@@ -25,6 +31,17 @@ const Viewb = () => {
     window.open(u, '_blank');
   }
   let {id} = useParams();
+  const cpost = ()=>{
+    setloading(true);
+    const url = "https://cserver-production.up.railway.app/comments/"+id;
+    axios.put(url,{
+       comments:com
+    }).then((res)=>{
+      console.log(res);
+      setloading(false);
+    })
+}
+
   useEffect(()=>{
     if(!localStorage.getItem('token'))
     {
@@ -46,6 +63,8 @@ const Viewb = () => {
       setkey(response.data.keywords);
       setim1(response.data.imglinke);
       setim2(response.data.imglinks);
+      setbid(response.data.id);
+      setcomments(response.data.comments);
     }).catch((error) => {
       console.log(error);
     })
@@ -92,14 +111,27 @@ const Viewb = () => {
                 </div>
             </div>
         </div>
-        <div class="container">
-             <div class="row justify-content-center">
-                 <div class="col-md-6">
-                      <h4 class="text-center mt-5">Comments/Queries</h4><br/><br/>
-                      <input type="textarea" class="form-control inpc" placeholder="Comments/queries" onChange={(e)=>{setcomm(e.target.value)}}/>
-                 </div>
-              </div>
-        </div>
+        
+         <div class="container mt-5">
+             <div class="row justify-content-center mt-4">
+                <div class="col-md-6">
+                     <input type="text" class="form-control fc" placeholder="Comments/Queries" onChange={(e)=>{setcom(e.target.value)}}/><br/>
+                    <button className="buttonc" onClick={cpost}>
+                    {loading && (
+                        <i
+                        className="fa fa-spinner fa-spin"
+                        style={{ marginRight: "5px" }}
+                        />
+                    )}
+                    {loading && <span>Posting Comment</span>}
+                    {!loading && <span>Comment</span>}
+                    </button>
+                </div>
+             </div>
+             {comments.length >=1 ? <Displayc c={comments} /> : null}
+         </div>
+
+
         <footer class="site-footer bg-dark mt-5">
       <div class="container">
         <div class="row">
