@@ -69,7 +69,7 @@ const Login = () => {
                 <button className="button" onClick={sub}>
                     {loading && (
                         <i
-                        className="fa fa-refresh fa-spin"
+                        className="fa fa-spinner fa-spin"
                         style={{ marginRight: "5px" }}
                         />
                     )}

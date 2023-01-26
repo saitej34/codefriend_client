@@ -83,7 +83,7 @@ const Register = () => {
                 <button className="button" onClick={reg}>
                     {loading && (
                         <i
-                        className="fa fa-refresh fa-spin"
+                        className="fa fa-spinner fa-spin"
                         style={{ marginRight: "5px" }}
                         />
                     )}

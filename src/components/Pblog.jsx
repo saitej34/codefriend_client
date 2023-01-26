@@ -9,6 +9,7 @@ import './Comp.css'
 const Pblog = () => {
 
     const editor = useRef(null);
+    const [loading,setloading] = useState(false);
     const [content, setContent] = useState('');
     const navigate = useNavigate();
     const [ti,setti] = useState('');
@@ -17,6 +18,7 @@ const Pblog = () => {
     const [ei,setei] = useState('');
     const [es,setes] = useState('');
     const subs = async(e)=>{
+        setloading(true);
         await axios.post('https://cserver-production.up.railway.app/posts',{
             btitle:ti,
             keywords:kt,
@@ -38,6 +40,7 @@ const Pblog = () => {
                     icon: "success",
                     button: "Ok!",
                   });
+                  setloading(false);
                   navigate('/dashboard');
             }
         }).catch((err)=>{
@@ -69,10 +72,20 @@ const Pblog = () => {
                         tabIndex={1} // tabIndex of textarea
                         onBlur={newContent => setContent(newContent)} // preferred to use only this option to update the content for performance reasons
                         onChange={newContent => {}}
-                    />
+                    /><br/>
                     <input type="url" class="form-control fc text-center" placeholder="Url of the Image respresenting Error" required onChange={(e)=>{setei(e.target.value)}}/><br/>
                     <input type="url" class="form-control fc text-center" placeholder="Url of the Image respresenting Error solved" required onChange={(e)=>{setes(e.target.value)}}/><br/>
-                    <input type="button" placeholder="Post" class="btn btn-warning" value="Post Blog" onClick={subs}/>
+
+                    <button className="button" onClick={subs}>
+                    {loading && (
+                        <i
+                        className="fa fa-spinner fa-spin"
+                        style={{ marginRight: "5px" }}
+                        />
+                    )}
+                    {loading && <span>Posting</span>}
+                    {!loading && <span>Post</span>}
+                    </button>
                 </div>
             </div>
         </div>
