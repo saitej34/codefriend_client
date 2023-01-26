@@ -1,15 +1,18 @@
 import React,{useState} from 'react'
 import axios from "axios";
+import './Load.css'
 import swal from 'sweetalert'
 import {useNavigate} from 'react-router-dom'
 import CircularProgress from '@mui/material/CircularProgress';
 const Register = () => {
+    const [loading,setloading] = useState(false);
     const hist = useNavigate();
     const [email,setemail] = useState('');
     const [name,setname] = useState('');
     const [password,setpass] = useState('');
     const [cpassword,setcpass] = useState('');
     const reg = (e)=>{
+        setloading(true);
         /*fetch('http://localhost:5000/register',{
             method: 'POST',
             body: JSON.stringify({
@@ -40,6 +43,7 @@ const Register = () => {
                         icon: "success",
                         button: "Ok!",
                       });
+                      setloading(false);
                       hist('/login')
 
                 }
@@ -76,7 +80,16 @@ const Register = () => {
             </div><br/><br/>
             <div class="row justify-content-center">
                 <div class="col-md-9">
-                    <input type="submit" class="btn btn-outline-warning" value="Register" onClick={reg}/>
+                <button className="button" onClick={reg}>
+                    {loading && (
+                        <i
+                        className="fa fa-refresh fa-spin"
+                        style={{ marginRight: "5px" }}
+                        />
+                    )}
+                    {loading && <span>Registering with our Network</span>}
+                    {!loading && <span>Register</span>}
+                    </button>
                 </div>
             </div> <br/>
             <div class="row justify-content-center">
