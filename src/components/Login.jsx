@@ -1,4 +1,5 @@
 import axios from 'axios';
+import './Load.css'
 import React,{useState} from 'react'
 import {useNavigate} from 'react-router-dom'
 const Login = () => {
@@ -6,10 +7,12 @@ const Login = () => {
     const adm = ()=>{
         navigation('/admin')
     }
+    const [loading,setloading] = useState('');
     const [result,setresult] = useState('');
     const [id,setid] = useState('');
     const [password,setpass] = useState('');
     const sub = async(e)=>{
+        setloading(true);
         e.preventDefault();
         await axios.post("https://cserver-production.up.railway.app/login",{
             email:id,
@@ -27,6 +30,7 @@ const Login = () => {
             if(response.data.token.length>0)
             {
                 localStorage.setItem('token',response.data.token)
+                setloading(false);
                 navigation('/dashboard')
             }
         }).catch((error)=>{
@@ -58,8 +62,16 @@ const Login = () => {
             </div> <br/>
             <div class="row justify-content-center">
                 <div class="col-md-9">
-                    <input type="submit" class="btn btn-outline-warning" onClick={sub} />
-                    <input type="submit" class="btn btn-outline-warning" value="Admin Login" onClick={adm} />
+                <button className="button" onClick={sub}>
+                    {loading && (
+                        <i
+                        className="fa fa-refresh fa-spin"
+                        style={{ marginRight: "5px" }}
+                        />
+                    )}
+                    {loading && <span>Validating Credentials</span>}
+                    {!loading && <span>Login</span>}
+                    </button>
                 </div>
             </div>
             <br/>
