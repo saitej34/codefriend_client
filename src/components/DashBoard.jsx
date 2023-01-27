@@ -1,6 +1,7 @@
 import axios from 'axios'
 import React,{useState} from 'react'
 import { useEffect} from 'react'
+import {Link} from 'react-router-dom'
 import {useNavigate} from 'react-router-dom'
 import CountUp from 'react-countup'
 /*import Button from 'react-bootstrap/Button';*/
@@ -57,6 +58,7 @@ const DashBoard = () => {
   const idss = new Array();
   const arrs = new Array();
   const keys = new Array();
+  const [uid,setuid] = useState('');
   const [img,setimg] = useState('');
   const [name,setname] = useState('');
   const [email,setemail] = useState('');
@@ -101,6 +103,7 @@ const DashBoard = () => {
     axios.get(url).then((response)=>{
           console.log(response.data.name);
           setemail(response.data.email);
+          setuid(response.data._id);
           setuser(response.data.name);
           setimg(response.data.profilepic);
     }).catch((error)=>{
@@ -225,11 +228,12 @@ const DashBoard = () => {
               open={Boolean(anchorElUser)}
               onClose={handleCloseUserMenu}
             >
-              {settings.map((setting) => (
-                <MenuItem key={setting} onClick={handleCloseUserMenu}>
-                  <Typography textAlign="center">{setting}</Typography>
+              <MenuItem onClick={handleCloseUserMenu}>
+                  <Typography textAlign="center"><a href={'/profile/' + uid}>Profile</a></Typography>
                 </MenuItem>
-              ))}
+                <MenuItem onClick={handleCloseUserMenu}>
+                  <Typography textAlign="center"><a href={'/'} onClick={log}>Logout</a></Typography>
+                </MenuItem>
             </Menu>
           </Box>
                   <a class="btn btn-warning text-center" onClick={log}>Logout</a>
