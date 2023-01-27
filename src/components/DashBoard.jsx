@@ -261,17 +261,20 @@ const DashBoard = () => {
     <br/><br/>
     <div class="container">
         <div class="row justify-content-center align-items-center">
-           <div class="col-md-3">
+           <div class="col-md-2">
                 <a href="/postblog" class="btn btn-dark-warning">Post an Blog</a>
            </div>
-           <div class="col-md-3">
+           <div class="col-md-2">
                 <a href="#" class="btn btn-dark-warning" onClick={handleShow}>Edit Profile</a>
            </div>
-           <div class="col-md-3">
+           <div class="col-md-2">
                 <a href="#" class="btn btn-dark-warning">Top Feed</a>
            </div>
-           <div class="col-md-3">
+           <div class="col-md-2">
                 <a href="#" class="btn btn-dark-warning">Bloggers near me</a>
+           </div>
+           <div class="col-md-2">
+                <a href="#" class="btn btn-dark-warning">Solve Questions</a>
            </div>
         </div>
     </div>

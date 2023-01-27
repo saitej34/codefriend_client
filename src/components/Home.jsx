@@ -112,6 +112,17 @@ const Home = () => {
     </div>
   </div>
   <br/>
+  <div className="container mb-2">
+      <div class="row">
+        <div class="col-md-6 text-center">
+           <marquee width="100%"> <strong>Get Access to all Top resources for Best Job roles in {new Date().getFullYear()}</strong>
+            <img src="https://img.icons8.com/ios/50/000000/new--v1.png"/>
+            <i><a href="/resources">Click Here</a></i>
+            </marquee>
+        </div>
+      </div>
+  </div>
+  <br/>
   <Display data={arr} />
   <Technews items={data}/>
   <br/> <br/><br/>

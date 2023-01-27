@@ -56,7 +56,7 @@ const Pblog = () => {
   return (
     <div>
         <div class="container-fluid text-center bg-warning pt-3 pb-2">
-            <h2>Get your problem Solved</h2>
+            <h2>Share Your Knowledge/Ideas</h2>
         </div>
         <div class="container mt-5">
             <div class="row">
@@ -64,8 +64,8 @@ const Pblog = () => {
                     <img src={bg} class="img-responsive img-fluid shadow p-3 mb-5 rounded" />
                 </div>
                 <div class="col-md-6 justify-content-end text-center">
-                    <input type="text" class="form-control text-center fc" placeholder="Error Title" required onChange={(e)=>{setti(e.target.value)}}/><br/>
-                    <input type="text" class="form-control text-center fc" placeholder="Key Topics Used" required onChange={(e)=>{setkt(e.target.value)}}/><br/>
+                    <input type="text" class="form-control text-center fc" placeholder="Title of Blog" required onChange={(e)=>{setti(e.target.value)}}/><br/>
+                    <input type="text" class="form-control text-center fc" placeholder="Keywords" required onChange={(e)=>{setkt(e.target.value)}}/><br/>
                     <JoditEditor
                         ref={editor}
                         value={content}
@@ -73,8 +73,8 @@ const Pblog = () => {
                         onBlur={newContent => setContent(newContent)} // preferred to use only this option to update the content for performance reasons
                         onChange={newContent => {}}
                     /><br/>
-                    <input type="url" class="form-control fc text-center" placeholder="Url of the Image respresenting Error" required onChange={(e)=>{setei(e.target.value)}}/><br/>
-                    <input type="url" class="form-control fc text-center" placeholder="Url of the Image respresenting Error solved" required onChange={(e)=>{setes(e.target.value)}}/><br/>
+                    <input type="url" class="form-control fc text-center" placeholder="Home Image Link" required onChange={(e)=>{setei(e.target.value)}}/><br/>
+                    <input type="url" class="form-control fc text-center" placeholder="Image 2" required onChange={(e)=>{setes(e.target.value)}}/><br/>
 
                     <button className="button" onClick={subs}>
                     {loading && (
@@ -88,6 +88,21 @@ const Pblog = () => {
                     </button>
                 </div>
             </div>
+        </div>
+        <div class="container mt-3">
+            <strong>Suggestions :</strong><br/>
+            <ul>
+                <li>You can N number of Images in the editor by clicking Image icon.</li>
+                <li>You can embed Youtube videos by clicking video Symbol.</li>
+                <li>You can add Tables data by clicking table icon.</li>
+                <li>You can add Hyperlinks.</li>
+                <li>You can Align Content.</li>
+                <li>You will get many features as you explore the Editor</li>
+            </ul>
+        </div>
+        <div class="container-fluid bg-dark text-white text-center p-3">
+            The Editor was taken from Open source <a href="https://www.npmjs.com/package/jodit-react" class="text-warning">JODIT EDITOR</a><br/>
+            We are thankful to Jodit Editor for their Wonderful features.
         </div>
     </div>
   )
