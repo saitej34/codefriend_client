@@ -89,21 +89,22 @@ const Home = () => {
            </div>
            <br/>
            <div class="col-md-6 justify-content-center">
+                <br/>
                 <h2 class="text-dark">Welcome to <span class="text-warning">CODE FRIEND</span></h2><br/>
-            <p class="text-justify">Codefriend.com <i class="text-warning"> CODE WANTS TO BE SIMPLE </i> is an initiative  to help the upcoming programmers with the code. Scanfcode focuses on providing the most efficient code or snippets as the code wants to be simple. We will help programmers build up concepts in different programming languages that include C, C++, Java, HTML, CSS, Bootstrap, JavaScript, PHP, Android, SQL and Algorithm.</p><br/><br/>
+            <p class="text-justify">Codefriend.com <i class="text-warning"> CODE WANTS TO BE SIMPLE </i> is an initiative  to help the upcoming programmers with the code. Codefriend focuses on providing the most efficient code or snippets as the code wants to be simple. We will help programmers build up concepts in different programming languages that include C, C++, Java, HTML, CSS, Bootstrap, JavaScript, PHP, Android, SQL and Algorithm.</p><br/><br/>
                 <a href="/login" class="btn btn-warning align-items-center">Get Involved</a>
            </div>
       </div>
   </div>
   <br/><br/>
-  <div class="container mt-5 mb-5">
+  <div class="container mt-5 mb-5 text-center">
      <h2 class="text-center">A Small insight of <span class="text-warning">CODEFRIEND</span></h2>
      <br/><br/>
     <div class="row justify-content-center mt-5">
-       <div class="col-md-6 text-center">
+       <div class="col-md-6 mb-5">
             <h3>Users Registered</h3>
             <h4><Countup start={0} end={user} duration={3} /></h4>
-       </div>
+       </div><br/><br/>
        <div class="col-md-6">
             <h3>Blogs/Problems Posted</h3>
             <h4><Countup start={0} end={nb} duration={3} /></h4>
