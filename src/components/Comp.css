@@ -244,3 +244,6 @@ a{
 a:hover{
   color:black;
 }
+.font{
+  font-size: 25px;
+}

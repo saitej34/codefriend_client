@@ -10,6 +10,7 @@ import Pblog from './components/Pblog'
 import Contact from './components/Contact'
 import Admin from './components/Admin'
 import Viewb from './components/Viewb'
+import Resources from './components/Resources'
 import Search from './components/Search'
 import AdminDashboard from './components/AdminDashboard'
 import Profile from './components/Profile'
@@ -34,6 +35,7 @@ const App = () => {
           <Route exact path="/search" element={<Search />} />
           <Route exact path="/profile/:id" element={<Profile />} />
           <Route exact path="/topusers" element={<Topuser />} />
+          <Route exact path="/resources" element={<Resources />} />
         </Routes>
     </div>
     </BrowserRouter>

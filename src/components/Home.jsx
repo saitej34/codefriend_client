@@ -5,6 +5,7 @@ import Display from './Display'
 import Countup from 'react-countup'
 import Technews from './Technews';
 const Home = () => {
+  //Hello
   const [user,setuser] = useState('');
   const [nb,setnb] = useState('');
   const [arr,setarr] = useState([]);
@@ -115,7 +116,7 @@ const Home = () => {
   <div className="container mb-2">
       <div class="row">
         <div class="col-md-6 text-center">
-           <marquee width="100%"> <strong>Get Access to all Top resources for Best Job roles in {new Date().getFullYear()}</strong>
+           <marquee width="100%"> <strong class="fon">Get Access to all Top resources for Best Job roles in {new Date().getFullYear()}</strong>
             <img src="https://img.icons8.com/ios/50/000000/new--v1.png"/>
             <i><a href="/resources">Click Here</a></i>
             </marquee>
@@ -177,7 +178,7 @@ const Home = () => {
       <div class="container">
         <div class="row">
           <div class="col-md-8 col-sm-6 col-xs-12">
-            <p class="copyright-text">Copyright &copy; 2022 All Rights Reserved by  
+            <p class="copyright-text">Copyright &copy; {new Date().getFullYear()} All Rights Reserved by  
          <a href="https://saitej34.github.io/saiportfolio.github.io/"> Y.SAI TEJA</a>.
             </p>
           </div>
