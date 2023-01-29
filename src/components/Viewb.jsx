@@ -54,13 +54,6 @@ const Viewb = () => {
     }).catch((err)=>{
       console.log(err);
     })
-   }
-
-  useEffect(()=>{
-    // if(!localStorage.getItem('token'))
-    // {
-    //       navigate('/login')
-    // }
     axios.get('https://cserver-production.up.railway.app/getqy/'+id).then((response) => {
       console.log(response)
       sett(response.data.btitle);
@@ -72,7 +65,6 @@ const Viewb = () => {
       setim2(response.data.imglinks);
       setbid(response.data.id);
       setcomments(response.data.comments);
-      getUser(response.data.userid);
     }).catch((error) => {
       console.log(error);
     })
@@ -90,7 +82,7 @@ const Viewb = () => {
               </div>
               <div class="col-md-5">
                    <h5 class="text-white"><b>Author : </b>{user}</h5>
-                   <p class="text-white"><b>Date : </b>{datetime}</p>
+                   <p class="text-white"><b>Date and Time : </b>{datetime}</p>
               </div>
           </div>
         <br/>
