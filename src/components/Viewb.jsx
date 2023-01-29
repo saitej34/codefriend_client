@@ -46,6 +46,7 @@ const Viewb = () => {
     if(!localStorage.getItem('token'))
     {
           navigate('/login')
+          console.log();
     }
     const url = "https://cserver-production.up.railway.app/decode/"+auth;
     axios.get(url).then((res)=>{
