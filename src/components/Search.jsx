@@ -8,6 +8,7 @@ const Search = () => {
     const [dat,setdata] = useState([]);
     const url = "https://cserver-production.up.railway.app/searchblog/"+query;
     const subs = ()=>{
+      console.log(query);
       axios.get(url).then((response)=>{
         console.log(response)
         setdata(response.data)
