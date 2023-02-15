@@ -13,7 +13,7 @@ const Display = ({data}) => {
   return (
     <div class="container pt-4">
         <h3 class="text-center">Recent Blogs on Road</h3>
-        <br/>
+        <br/><br/>
         <div class="row d-flex justify-content-around">
             {data.slice(0,x).map((item) => (
               <div class="col-md-3 column pb-3 m-2">
