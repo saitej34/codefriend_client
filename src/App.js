@@ -33,6 +33,7 @@ const App = () => {
           <Route exact path="/topusers" element={<Topuser />} />
           <Route exact path="/resources" element={<Resources />} />
           <Route exact path="/search" element={<Search />} />
+          <Route exact path="/solve" element={<Solve />} />
         </Routes>
     </div>
     </BrowserRouter>
