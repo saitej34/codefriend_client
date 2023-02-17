@@ -43,10 +43,6 @@ const Viewb = () => {
 }
 
   useEffect(()=>{
-    if(!localStorage.getItem('token'))
-    {
-          navigate('/login')
-    }
     const url = "https://cserver-production.up.railway.app/decode/"+auth;
     axios.get(url).then((res)=>{
       console.log(res.data.name)
