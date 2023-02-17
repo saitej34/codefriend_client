@@ -229,14 +229,14 @@ const DashBoard = () => {
               onClose={handleCloseUserMenu}
             >
               <MenuItem onClick={handleCloseUserMenu}>
-                  <Typography textAlign="center"><a href={'/profile/' + uid}>Profile</a></Typography>
+                  <Typography textAlign="center"><a href={'/profile' + uid}>Profile</a></Typography>
                 </MenuItem>
                 <MenuItem onClick={handleCloseUserMenu}>
                   <Typography textAlign="center"><a href={'/'} onClick={log}>Logout</a></Typography>
                 </MenuItem>
             </Menu>
           </Box>
-                  <a class="btn btn-warning text-center" onClick={log}>Logout</a>
+                 
               </div>
 
 
