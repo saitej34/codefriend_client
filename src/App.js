@@ -13,6 +13,7 @@ import Resources from './components/Resources'
 import Search from './components/Search'
 import Profile from './components/Profile'
 import Topuser from './components/Topuser'
+import Solve from './components/Solve'
 import {BrowserRouter,Routes,Route} from 'react-router-dom';
 const App = () => {
   return (
