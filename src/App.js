@@ -32,6 +32,7 @@ const App = () => {
           <Route exact path="/profile/:id" element={<Profile />} />
           <Route exact path="/topusers" element={<Topuser />} />
           <Route exact path="/resources" element={<Resources />} />
+          <Route exact path="/search" element={<Search />} />
         </Routes>
     </div>
     </BrowserRouter>
