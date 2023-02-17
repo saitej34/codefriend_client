@@ -1,6 +1,7 @@
 import React, { useEffect,useState } from 'react'
 import './Comp.css'
 import axios from 'axios'
+import Contact from './Contact'
 import Display from './Display'
 import Countup from 'react-countup'
 import Technews from './Technews';
@@ -127,20 +128,7 @@ const Home = () => {
   <Display data={arr} />
   <Technews items={data}/>
   <br/> <br/><br/>
-  <h3 class="text-center">Contact us</h3>
-    <br/>
-    <div class="container">
-        <div class="row justify-content-center m-4">
-            <div class="col-md-6 justify-content-center">
-              <form action="https://formsubmit.co/yelagandulasaiteja70@gmail.com" method="POST">
-                 <input type="text" name="name" class="form-control fc" placeholder="Name" /><br/>
-                 <input type="email" name="email" class="form-control fc" placeholder="Email" /><br/>
-                 <input type="textarea" name="query" class="form-control tarea fc" placeholder="Query" /><br/>
-                 <input type="submit" class="btn btn-warning" value="Send message" />
-              </form>
-            </div>
-        </div>
-    </div>
+  <Contact />
     <br/><br/><br/>
     <footer class="site-footer bg-dark">
       <div class="container">

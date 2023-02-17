@@ -365,7 +365,7 @@ const DashBoard = () => {
       <div class="container">
         <div class="row">
           <div class="col-md-8 col-sm-6 col-xs-12">
-            <p class="copyright-text">Copyright &copy; 2022 All Rights Reserved by  
+            <p class="copyright-text">Copyright &copy; {new Date().getFullYear()} All Rights Reserved by  
          <a href="https://saitej34.github.io/saiportfolio.github.io/"> Y.SAI TEJA</a>.
             </p>
           </div>
