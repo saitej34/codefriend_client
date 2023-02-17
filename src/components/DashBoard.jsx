@@ -274,7 +274,7 @@ const DashBoard = () => {
                 <a href="#" class="btn btn-dark-warning">Bloggers near me</a>
            </div>
            <div class="col-md-2">
-                <a href="#" class="btn btn-dark-warning">Solve Questions</a>
+                <a href="/solve" class="btn btn-dark-warning">Solve Questions</a>
            </div>
         </div>
     </div>
