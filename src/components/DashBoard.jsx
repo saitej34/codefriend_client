@@ -229,14 +229,14 @@ const DashBoard = () => {
               onClose={handleCloseUserMenu}
             >
               <MenuItem onClick={handleCloseUserMenu}>
-                  <Typography textAlign="center"><a href={'/profile/' + uid}>Profile</a></Typography>
+                  <Typography textAlign="center"><a href={'/profile' + uid}>Profile</a></Typography>
                 </MenuItem>
                 <MenuItem onClick={handleCloseUserMenu}>
                   <Typography textAlign="center"><a href={'/'} onClick={log}>Logout</a></Typography>
                 </MenuItem>
             </Menu>
           </Box>
-                  <a class="btn btn-warning text-center" onClick={log}>Logout</a>
+                 
               </div>
 
 
@@ -269,9 +269,6 @@ const DashBoard = () => {
            </div>
            <div class="col-md-2">
                 <a href="#" class="btn btn-dark-warning">Top Feed</a>
-           </div>
-           <div class="col-md-2">
-                <a href="#" class="btn btn-dark-warning">Bloggers near me</a>
            </div>
            <div class="col-md-2">
                 <a href="/solve" class="btn btn-dark-warning">Solve Questions</a>
