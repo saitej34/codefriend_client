@@ -13,6 +13,7 @@ import Resources from './components/Resources'
 import Search from './components/Search'
 import Profile from './components/Profile'
 import Topuser from './components/Topuser'
+import Solve from './components/Solve'
 import {BrowserRouter,Routes,Route} from 'react-router-dom';
 const App = () => {
   return (
@@ -33,6 +34,7 @@ const App = () => {
           <Route exact path="/topusers" element={<Topuser />} />
           <Route exact path="/resources" element={<Resources />} />
           <Route exact path="/search" element={<Search />} />
+          <Route exact path="/solve" element={<Solve />} />
         </Routes>
     </div>
     </BrowserRouter>

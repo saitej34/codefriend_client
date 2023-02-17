@@ -1,7 +1,6 @@
-import './App.css';
 import {useState,useEffect} from 'react';
 import io from 'socket.io-client';
-
+import '../App.css'
 const socket = io("https://cserve.up.railway.app")
 
 
