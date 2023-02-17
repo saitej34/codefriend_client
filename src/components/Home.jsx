@@ -5,7 +5,7 @@ import Display from './Display'
 import Countup from 'react-countup'
 import Technews from './Technews';
 const Home = () => {
-  //Hello
+  //Home pages
   const [user,setuser] = useState('');
   const [nb,setnb] = useState('');
   const [arr,setarr] = useState([]);
