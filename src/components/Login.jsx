@@ -90,7 +90,7 @@ const Login = () => {
                         />
                     )}
                     {loading && <span>Validating your Credentials</span>}
-                    {!loading && <span>Register</span>}
+                    {!loading && <span>Login</span>}
                     </button>
     </form>
     <div class="sign-txt">New User ? <a href="/register">Signup</a></div>
