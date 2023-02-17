@@ -68,7 +68,7 @@ const Register = () => {
       </div>
       <div class="field email">
         <div class="input-area">
-          <input type="email" placeholder="Name" onChange={(e)=>{setname(e.target.value)}}/>
+          <input type="text" placeholder="Name" onChange={(e)=>{setname(e.target.value)}}/>
           <i class="icon fa fa-address-book"></i>
           <i class="error error-icon fas fa-exclamation-circle"></i>
         </div>
