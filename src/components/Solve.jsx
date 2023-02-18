@@ -7,6 +7,7 @@ const socket = io("https://cserve.up.railway.app")
 
 function Solve() {
   var time;
+  console.log(localStorage.getItem('token'))
   var msgtime = ()=>{
     var date = new Date();
   var hours = date.getHours() < 10 ? "0" + date.getHours() : date.getHours();
@@ -31,6 +32,7 @@ function Solve() {
   const [profilepic,setprofile] = useState('');
   const send = (e)=>{
      e.preventDefault();
+     console.log(message);
      socket.emit("chat",{message:message,name:nam,time:tim});
      setmessage('');
   }
@@ -52,18 +54,17 @@ function Solve() {
     
   </div>
   <ol class="chat">
-        {chat.map((chat)=>{
-             <li class="self">
+        {chat.map((chat,index)=>{
+            return <li class="self" key={index}>
                          <div class="avatar"><img src="http://i.imgur.com/DY6gND0.png" draggable="false"/></div>
                          <div class="msg">
                          <p>{chat.message}</p>
-                          <p>{chat.name}</p>
-                            <time>{msgtime()}</time>
+                            <time>{chat.time}</time>
                           </div>
             </li>
         })}
   </ol>
-  <input class="text" type="text" placeholder="Type here!" onChange={(e)=>{setmessage(e.target.value)}} />
+  <input class="text" type="text" placeholder="Type here!" value={message} onChange={(e)=>{setmessage(e.target.value)}} />
   <input type="button" class="btns" value="Send" onClick={send} /> 
   <div class="emojis"></div>
     </div>
