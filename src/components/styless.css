@@ -7,12 +7,12 @@
 }
 ::selection{
   color: #fff;
-  background: #5372F0;
+  background: #f7cf78;
 }
 .boxy{
     width:100%;
     height: 715px;
-    background-color: #5372F0;
+    background-color: #f7cf78;
 }
 .wrapper{
   margin:auto;
@@ -60,7 +60,7 @@ form input{
   padding: 0 45px;
   font-size: 18px;
   background: none;
-  caret-color: #5372F0;
+  caret-color: #f7cf78;
   border-radius: 5px;
   border: 1px solid #bfbfbf;
   border-bottom-width: 2px;
@@ -68,7 +68,7 @@ form input{
 }
 form .field input:focus,
 form .field.valid input{
-  border-color: #5372F0;
+  border-color: #f7cf78;
 }
 form .field.shake input,
 form .field.error input{
@@ -92,7 +92,7 @@ form .field.error input{
 }
 form input:focus ~ .icon,
 form .field.valid .icon{
-  color: #5372F0;
+  color: #f7cf78;
 }
 form .field.shake input:focus ~ .icon,
 form .field.error input:focus ~ .icon{
@@ -119,7 +119,7 @@ form .pass-txt{
   margin-top: -10px;
 }
 .wrapper a{
-  color: #5372F0;
+  color: #f7cf78;
   text-decoration: none;
 }
 .wrapper a:hover{
@@ -131,23 +131,23 @@ form input[type="submit"]{
   color: #fff;
   padding: 0;
   border: none;
-  background: #5372F0;
+  background: #f7cf78;
   cursor: pointer;
   border-bottom: 2px solid rgba(0,0,0,0.1);
   transition: all 0.3s ease;
 }
 form input[type="submit"]:hover{
-  background: #2c52ed;
+  background: #f7cf78;
 }
 .buttons{
     padding:10px 15px;
     color: #fff;
     border: none;
-    background: #5372F0;
+    background: #f7cf78;
     cursor: pointer;
     border-bottom: 2px solid rgba(0,0,0,0.1);
     transition: all 0.3s ease;
   }
 .buttons:hover{
-    background: #2c52ed;
+    background: #f7cf78;
   }
