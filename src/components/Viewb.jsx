@@ -77,7 +77,6 @@ const Viewb = () => {
                 <br/>
               </div>
               <div class="col-md-5">
-                   <h5 class="text-white"><b>Author : </b>{user}</h5>
                    <p class="text-white"><b>Date and Time : </b>{datetime}</p>
               </div>
           </div>
