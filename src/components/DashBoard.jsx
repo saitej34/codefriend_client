@@ -78,7 +78,7 @@ const DashBoard = () => {
       navigate('/')
   }
   const subdetails = (e)=>{
-       axios.put('https://cserver-production.up.railway.app/editprofile',{
+       axios.put('https://codefriendbackend.vercel.app/editprofile',{
             name:user,
             email:email,
             profilepic:profile,
@@ -99,7 +99,7 @@ const DashBoard = () => {
           navigate('/login')
     }
     const token = localStorage.getItem('token')
-    const url = "https://cserver-production.up.railway.app/decode/"+token;
+    const url = "https://codefriendbackend.vercel.app/decode/"+token;
     axios.get(url).then((response)=>{
           console.log(response.data.name);
           setemail(response.data.email);
@@ -109,7 +109,7 @@ const DashBoard = () => {
     }).catch((error)=>{
       console.log(error);
     })
-    const ur = "https://cserver-production.up.railway.app/getp/"+token;
+    const ur = "https://codefriendbackend.vercel.app/getp/"+token;
     axios.get(ur).then((response)=>{
       console.log(response)
       console.log(response.data[0].btitle)

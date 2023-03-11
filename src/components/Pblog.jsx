@@ -19,7 +19,7 @@ const Pblog = () => {
     const [es,setes] = useState('');
     const subs = async(e)=>{
         setloading(true);
-        await axios.post('https://cserver-production.up.railway.app/posts',{
+        await axios.post('https://codefriendbackend.vercel.app/posts',{
             btitle:ti,
             keywords:kt,
             his:content,

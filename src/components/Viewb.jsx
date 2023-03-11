@@ -33,7 +33,7 @@ const Viewb = () => {
   let {id} = useParams();
   const cpost = ()=>{
     setloading(true);
-    const url = "https://cserver-production.up.railway.app/comments/"+id;
+    const url = "https://codefriendbackend.vercel.app/comments/"+id;
     axios.put(url,{
        comments:com
     }).then((res)=>{
@@ -43,14 +43,14 @@ const Viewb = () => {
 }
 
   useEffect(()=>{
-    const url = "https://cserver-production.up.railway.app/decode/"+auth;
+    const url = "https://codefriendbackend.vercel.app/decode/"+auth;
     axios.get(url).then((res)=>{
       console.log(res.data.name)
       setuser(res.data.name)
     }).catch((err)=>{
       console.log(err);
     })
-    axios.get('https://cserver-production.up.railway.app/getqy/'+id).then((response) => {
+    axios.get('https://codefriendbackend.vercel.app/getqy/'+id).then((response) => {
       console.log(response)
       sett(response.data.btitle);
       setauth(response.data.userid);

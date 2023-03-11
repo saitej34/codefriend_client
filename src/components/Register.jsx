@@ -27,7 +27,7 @@ const Register = () => {
         }).catch((err)=>{
             console.log(err);
         })*/
-        axios.post('https://cserver-production.up.railway.app/register', {
+        axios.post('https://codefriendbackend.vercel.app/register', {
               email:email,
               name:name,
               password:password,

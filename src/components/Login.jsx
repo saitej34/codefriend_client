@@ -29,7 +29,7 @@ const Login = () => {
     const sub = async(e)=>{
         setloading(true);
         e.preventDefault();
-        await axios.post("https://cserver-production.up.railway.app/login",{
+        await axios.post("https://codefriendbackend.vercel.app/getblogs/login",{
             email:id,
             password:password
         }).then((response)=>{

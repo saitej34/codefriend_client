@@ -12,13 +12,13 @@ const Home = () => {
   const [arr,setarr] = useState([]);
   const data = new Array();
   useEffect(()=>{
-    const ur = "https://cserver-production.up.railway.app/getblogs"
+    const ur = "https://codefriendbackend.vercel.app/getblogs"
     axios.get(ur).then((response)=>{
       setarr(response.data);
     }).catch((error)=>{
       console.log(error);
     })
-    axios.get('https://cserver-production.up.railway.app/getpubl').then((response)=>{
+    axios.get('https://codefriendbackend.vercel.app/getpubl').then((response)=>{
         setuser(response.data.users);
         setnb(response.data.blogs);
     }).catch((error)=>{

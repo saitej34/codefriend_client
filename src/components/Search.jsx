@@ -6,7 +6,7 @@ import './Comp.css'
 const Search = () => {
     const [query,setquery] = useState('');
     const [dat,setdata] = useState([]);
-    const url = "https://cserver-production.up.railway.app/searchblog/"+query;
+    const url = "https://codefriendbackend.vercel.app/searchblog/"+query;
     const subs = ()=>{
       console.log(query);
       axios.get(url).then((response)=>{

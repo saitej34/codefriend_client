@@ -5,7 +5,7 @@ import Displayusers from './Displayusers'
 const Topuser = () => {
     const [users,setdata] = useState([]);
     const getD = async()=>{
-        await axios.get('https://cserver-production.up.railway.app/getusers').then((res)=>{
+        await axios.get('https://codefriendbackend.vercel.app/getusers').then((res)=>{
             for(var i=0;i<res.data.length;i++)
             {
                 if(users.length<res.data.length)
