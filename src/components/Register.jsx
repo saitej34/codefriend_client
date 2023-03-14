@@ -33,6 +33,19 @@ const Register = () => {
                       hist('/login')
 
                 }
+                if(response.data.message==='User already exists')
+                {
+                    swal({
+                        title: "User Already Exists",
+                        text: "Register with another mail Id",
+                        icon: "error",
+                        button: "Ok!",
+                      });
+                      setloading(false);
+                      hist('/login')
+
+                }
+                
             })
             .catch(function (error) {
                 console.log(error);
