@@ -2,7 +2,7 @@ import {useState,useEffect} from 'react';
 import io from 'socket.io-client';
 import '../App.css'
 import './solve.css'
-const socket = io("https://cserve.up.railway.app")
+//const socket = io("https://cserve.up.railway.app")
 
 
 function Solve() {
@@ -30,7 +30,7 @@ function Solve() {
   const [nam,setnam] = useState('');
   const [user,setuser] = useState('');
   const [profilepic,setprofile] = useState('');
-  const send = (e)=>{
+  /*const send = (e)=>{
      e.preventDefault();
      console.log(message);
      socket.emit("chat",{message:message,name:nam,time:tim});
@@ -41,7 +41,7 @@ function Solve() {
     socket.on("chat",(payload)=>{
       setchat([...chat,payload])
     })
-})
+})*/
   return (
     <div>
         <div class="menu">
@@ -65,7 +65,7 @@ function Solve() {
         })}
   </ol>
   <input class="text" type="text" placeholder="Type here!" value={message} onChange={(e)=>{setmessage(e.target.value)}} />
-  <input type="button" class="btns" value="Send" onClick={send} /> 
+  {/* <input type="button" class="btns" value="Send" onClick={send} />  */}
   <div class="emojis"></div>
     </div>
     
@@ -73,118 +73,3 @@ function Solve() {
 }
 
 export default Solve;
-
-/* <div className="App">
-      <header className="App-header">
-          <h1>Chat App</h1>
-          <input type="text" placeholder="name" onChange={(e)=>{setnam(e.target.value)}}/>
-          {chat.map((pay,index)=>{
-            return <p key="index">{pay.message} : {pay.name}</p>
-          })}
-
-          <form onSubmit={send}>
-            <input type="text" name="chat" placeholder="send text" value={message} onChange={(e)=>{setmessage(e.target.value)}}/>
-            <button type="submit">Send</button>
-          </form>
-      </header>
-    </div> */
-  //   <li class="self">
-  //             <div class="avatar"><img src="http://i.imgur.com/DY6gND0.png" draggable="false"/></div>
-  //             <div class="msg">
-  //             <p>Hola!</p>
-  //             <p>Te vienes a cenar al centro? <emoji class="pizza"/></p>
-  //               <time>20:17</time>
-  //             </div>
-  //       </li>
-  //       <li class="self">
-  //             <div class="avatar"><img src="http://i.imgur.com/HYcn9xO.png" draggable="false"/></div>
-  //             <div class="msg">
-  //             <p>Puff...</p>
-  //             <p>Aún estoy haciendo el contexto de Góngora... <emoji class="books"/></p>
-  //             <p>Mejor otro día</p>
-  //               <time>20:18</time>
-  //             </div>
-  //       </li>
-  //       <li class="other">
-  //             <div class="avatar"><img src="http://i.imgur.com/DY6gND0.png" draggable="false"/></div>
-  //             <div class="msg">
-  //             <p>Qué contexto de Góngora? <emoji class="suffocated"/></p>
-  //               <time>20:18</time>
-  //             </div>
-  //       </li>
-  //       <li class="self">
-  //             <div class="avatar"><img src="http://i.imgur.com/HYcn9xO.png" draggable="false"/></div>
-  //             <div class="msg">
-  //             <p>El que mandó Marialu</p>
-  //             <p>Es para mañana...</p>
-  //             <time>20:18</time>
-  //             </div>
-  //       </li>
-  //       <li class="other">
-  //             <div class="avatar"><img src="http://i.imgur.com/DY6gND0.png" draggable="false"/></div>
-  //             <div class="msg">
-  //             <p><emoji class="scream"/></p>
-  //             <p>Pásamelo! <emoji class="please"/></p>
-  //               <time>20:18</time>
-  //             </div>
-  //       </li>
-  //       <li class="self">
-  //             <div class="avatar"><img src="http://i.imgur.com/HYcn9xO.png" draggable="false"/></div>
-  //             <div class="msg">
-  //             <img src="http://i.imgur.com/QAROObc.jpg" draggable="false"/>
-  //               <time>20:19</time>
-  //             </div>
-  //       </li>
-  //       <li class="other">
-  //             <div class="avatar"><img src="http://i.imgur.com/DY6gND0.png" draggable="false"/></div>
-  //             <div class="msg">
-  //             <p>Gracias! <emoji class="hearth_blue"/></p>
-  //               <time>20:20</time>
-  //             </div>
-  //       </li>
-  // <div class="day">Hoy</div>
-  //       <li class="self">
-  //             <div class="avatar"><img src="http://i.imgur.com/HYcn9xO.png" draggable="false"/></div>
-  //             <div class="msg">
-  //             <p>Te apetece jugar a Minecraft?</p>
-  //               <time>18:03</time>
-  //             </div>
-  //       </li>
-  //       <li class="other">
-  //             <div class="avatar"><img src="http://i.imgur.com/DY6gND0.png" draggable="false"/></div>
-  //             <div class="msg">
-  //             <p>Venga va, hace ya mucho que no juego...</p>
-  //               <time>18:07</time>
-  //             </div>
-  //       </li>
-  //       <li class="self">
-  //             <div class="avatar"><img src="http://i.imgur.com/HYcn9xO.png" draggable="false"/></div>
-  //             <div class="msg">
-  //             <p>Ehh, me crashea el Launcher... <emoji class="cryalot"/></p>
-  //               <time>18:08</time>
-  //             </div>
-  //       </li>
-  //       <li class="other">
-  //             <div class="avatar"><img src="http://i.imgur.com/DY6gND0.png" draggable="false"/></div>
-  //             <div class="msg">
-  //             <p><emoji class="lmao"/></p>
-  //               <time>18:08</time>
-  //             </div>
-  //       </li>
-  //       <li class="self">
-  //             <div class="avatar"><img src="http://i.imgur.com/HYcn9xO.png" draggable="false"/></div>
-  //             <div class="msg">
-  //             <p>Es broma</p>
-  //             <p>Ataque Moai!</p>
-  //             <p><span><emoji class="moai"/></span><span><emoji class="moai"/></span><span><emoji class="moai"/></span><span><emoji class="moai"/></span><span><emoji class="moai"/></span><span><emoji class="moai"/></span></p>
-  //               <time>18:09</time>
-  //             </div>
-  //       </li>
-  //       <li class="other">
-  //             <div class="avatar"><img src="http://i.imgur.com/DY6gND0.png" draggable="false"/></div>
-  //             <div class="msg">
-  //             <p>Copón</p>
-  //             <p><emoji class="funny"/></p>
-  //               <time>18:08</time>
-  //             </div>
-  //       </li>

@@ -18,10 +18,7 @@ html, body {
     height: 50px;
     background: rgba(243, 185, 27, 0.9);
     z-index: 100;
-    -webkit-touch-callout: none;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
+    
 }
 
 .back {
@@ -109,9 +106,7 @@ html, body {
     -ms-border-radius: 100%;
     background-color: rgba(255,255,255,0.9);
     -webkit-touch-callout: none;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
+    
 }
 .chat .day {
     position: relative;
@@ -125,10 +120,7 @@ html, body {
     margin-top: 5px;
     margin-bottom: 20px;
     cursor: default;
-    -webkit-touch-callout: none;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
+    
 }
 
 .other .msg {
@@ -240,58 +232,6 @@ emoji{
     margin-right: 2px;
     transform: translate3d(0px, 3px, 0px);
 }
-emoji.please{background-image: url(http://imgur.com/ftowh0s.png);}
-emoji.lmao{background-image: url(http://i.imgur.com/MllSy5N.png);}
-emoji.happy{background-image: url(http://imgur.com/5WUpcPZ.png);}
-emoji.pizza{background-image: url(http://imgur.com/voEvJld.png);}
-emoji.cryalot{background-image: url(http://i.imgur.com/UUrRRo6.png);}
-emoji.books{background-image: url(http://i.imgur.com/UjZLf1R.png);}
-emoji.moai{background-image: url(http://imgur.com/uSpaYy8.png);}
-emoji.suffocated{background-image: url(http://i.imgur.com/jfTyB5F.png);}
-emoji.scream{background-image: url(http://i.imgur.com/tOLNJgg.png);}
-emoji.hearth_blue{background-image: url(http://i.imgur.com/gR9juts.png);}
-emoji.funny{background-image: url(http://i.imgur.com/qKia58V.png);}
-
-@-webikt-keyframes pulse {
-  from { opacity: 0; }
-  to { opacity: 0.5; }
-}
-
-::-webkit-scrollbar {
-    min-width: 12px;
-    width: 12px;
-    max-width: 12px;
-    min-height: 12px;
-    height: 12px;
-    max-height: 12px;
-    background: #e5e5e5;
-    box-shadow: inset 0px 50px 0px rgba(82,179,217,0.9), inset 0px -52px 0px #fafafa;
-}
-
-::-webkit-scrollbar-thumb {
-    background: #bbb;
-    border: none;
-    border-radius: 100px;
-    border: solid 3px #e5e5e5;
-    box-shadow: inset 0px 0px 3px #999;
-}
-
-::-webkit-scrollbar-thumb:hover {
-    background: #b0b0b0;
-  box-shadow: inset 0px 0px 3px #888;
-}
-
-::-webkit-scrollbar-thumb:active {
-    background: #aaa;
-  box-shadow: inset 0px 0px 3px #7f7f7f;
-}
-
-::-webkit-scrollbar-button {
-    display: block;
-    height: 26px;
-}
-
-/* T Y P E */
 
 input.text {
     position: fixed;

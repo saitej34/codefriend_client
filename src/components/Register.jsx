@@ -1,9 +1,8 @@
-import React,{useState} from 'react'
+import React,{useState} from 'react';
 import axios from "axios";
-import './styless.css'
-import swal from 'sweetalert'
-import {useNavigate} from 'react-router-dom'
-import CircularProgress from '@mui/material/CircularProgress';
+import './styless.css';
+import swal from 'sweetalert';
+import {useNavigate} from 'react-router-dom';
 const Register = () => {
     const [loading,setloading] = useState(false);
     const hist = useNavigate();
@@ -12,21 +11,8 @@ const Register = () => {
     const [password,setpass] = useState('');
     const [cpassword,setcpass] = useState('');
     const reg = (e)=>{
+       e.preventDefault();
         setloading(true);
-        /*fetch('http://localhost:5000/register',{
-            method: 'POST',
-            body: JSON.stringify({
-                email:email,
-                name:name,
-                password:password,
-                cpassword:cpassword
-            }),
-            contentType: 'application/json'
-        }).then((res)=>{
-            console.log(res);
-        }).catch((err)=>{
-            console.log(err);
-        })*/
         axios.post('https://codefriendbackend.vercel.app/register', {
               email:email,
               name:name,
