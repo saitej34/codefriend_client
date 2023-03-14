@@ -16,7 +16,7 @@ const Page = () => {
         <br/>
     </div>
      <br/><br/><br/>
-     <h2 align="center">Page Not Found</h2>
+     <h2 align="center">404 Page Not Found</h2>
     </div>
   )
 }
